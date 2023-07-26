@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className='section footer'>
       <ul className='footer-links'>
         {pageLinks.map((link) => (
-          <PageLink key={link.id} {...link} />
+          <PageLink key={link.id} linkClass='footer-link' {...link} />
         ))}
       </ul>
       <ul className='footer-icons'>
