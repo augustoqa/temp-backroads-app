@@ -1,29 +1,18 @@
 import { pageLinks, socialLinks } from '../data'
+import PageLink from './PageLink'
+import SocialLink from './SocialLink'
 
 const Footer = () => {
   return (
     <footer className='section footer'>
       <ul className='footer-links'>
-        {pageLinks.map(({ id, href, text }) => (
-          <li key={id}>
-            <a href={href} className='footer-link'>
-              {text}
-            </a>
-          </li>
+        {pageLinks.map((link) => (
+          <PageLink key={link.id} {...link} />
         ))}
       </ul>
       <ul className='footer-icons'>
-        {socialLinks.map(({ id, href, icon }) => (
-          <li key={id}>
-            <a
-              href={href}
-              target='_blank'
-              rel='noreferrer'
-              className='footer-icon'
-            >
-              <i className={icon}></i>
-            </a>
-          </li>
+        {socialLinks.map((link) => (
+          <SocialLink key={link.id} {...link} />
         ))}
       </ul>
       <p className='copyright'>
